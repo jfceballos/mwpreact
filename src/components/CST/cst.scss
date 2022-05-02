@@ -1,0 +1,95 @@
+
+.cst{
+        
+    input {
+        margin: 10px;
+        width: 80%;
+    }   
+
+    table {
+        table-layout: fixed;
+        word-wrap:break-word;
+        border-collapse: separate;
+
+   
+    }
+
+    .table > thead >tr {
+            border-radius: 10px;
+    }
+    
+
+    thead{
+        font-size: 12px;
+        color:white;
+        background: linear-gradient(to left, #949ed4, #5b76c2, #ababb1);
+        cursor: pointer;
+       
+    }
+    td{
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.createuser {
+    /* display: flex;   
+    justify-content: center;*/
+    flex: 1;
+    display: flex;
+    
+    padding: 15px; 
+    justify-content: space-between;
+    
+    label {
+        color: #5b76c2;
+        display: none;
+    }
+
+    input {
+        border: none;
+        border-bottom: 1px solid black;
+        
+      &:hover
+        {
+            border: none;
+            border-bottom: 1px solid black;
+        }
+    }
+ 
+    .react-select-container{
+        font-size: 12px;
+                
+        .react-select__control {
+           border: 1px solid #333;
+         }
+    }
+
+    .leftside {
+      display: flex;
+      flex-direction:column;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 10px; 
+      justify-content: space-between;
+     
+    }
+
+    .rightside {
+        padding: 20px; 
+        margin: 20px;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+}
