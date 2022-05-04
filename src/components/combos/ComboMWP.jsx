@@ -1,25 +1,25 @@
 import Select from 'react-select'
 import { useSelector } from 'react-redux'
 import axios from '../../api/posts'
-import { useState, useEffect  } from 'react'
+import { forwardRef, useState, useEffect  } from 'react'
 
 
-const ComboMWP = ({catalogName, dependencyValue, onChange, comboref}) => {
+const ComboMWP = forwardRef ( (props, ref) => {
     const [catalog, setCatalog] = useState([]);
    
     const token = useSelector(state => state.user.token);
     
   
     useEffect(() => {  
-        console.log(`ComboMWP rendered: ${catalogName} ${dependencyValue}`);           
+        /* console.log(`ComboMWP rendered: ${props.catalogName} ${props.dependencyValue}`);   */         
         getCatalogInfo();
-    },[dependencyValue])
+    },[props.dependencyValue])
 
     
     const getCatalogInfo = async () => {
         try {
-            
-            const params = { 'catalogName': catalogName, 'dependencyValue': dependencyValue}
+            console.log(props.catalogName);
+            const params = { 'catalogName': props.catalogName, 'dependencyValue': props.dependencyValue}
 
             const response = await axios.post('catalog/getCatalogInfo', params,
                             {
@@ -39,16 +39,16 @@ const ComboMWP = ({catalogName, dependencyValue, onChange, comboref}) => {
 
   return (
     <div>
-         <Select 
+         <Select {...props} options={catalog} onChange = {props.onChange}
        /*   value={catalog.filter( opt => opt.value === initialValue)}   */
+        /*     className={className}
+            classNamePrefix={classNamePrefix}
             onChange = {onChange}
-            options={catalog}
-            ref =  {comboref}
-           
-            /* value= {{ label: defaultLabel, value: defaultValue}}   */
+            options={catalog} */
          />
     </div>
-  )
+  ) 
 }
+)
 
 export default ComboMWP

@@ -4,7 +4,7 @@ import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom'
 import {AuthProvider} from './context/AuthProvider'
 import { Provider } from 'react-redux';
- import { PersistGate } from 'redux-persist/integration/react';
+import { PersistGate } from 'redux-persist/integration/react';
 import { createStore } from 'redux';
 import userReducer from './reducers/user';
 import allReducers from './reducers';

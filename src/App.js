@@ -11,21 +11,30 @@ import Header from './pages/Header';
 import CPA001001 from './components/CPA/CPA001001';
 import Test from './pages/Test';
 import Settings from './pages/Settings';
+import ReactHookForm from './pages/ReactHookForm';
+import Redirect from './pages/Redirect';
  
 
 function App() {
+  console.log('App')
 
   return (
     <DataProvider>
       
-          <Header />
+          <Header />  
+         {/*  <ReactHookForm /> */}
            <Routes>      
-            <Route path='/test' element = {<Test/>} />
+              <Route path='/' element={<Settings />}>
+                  <Route path='/test' element = {<Test/>} />
+                  <Route path='/test2' element ={<ReactHookForm />} />
+              </Route>
+           
             <Route path="/login" element = {<Login/>} />
             <Route path="/clientes" element = {<CST000401/>} />
             <Route path="/createuser" element = {<CreateUser/>} />
             <Route path="/portfolio" element = {<CPA001001/>} />
             <Route path="/settings" element = {<Settings/>} />
+            <Route path="/url" element = { <Redirect url='http://localhost:2010/Pages/GEN000101.aspx?main=1'/> } />
          </Routes>
          
     </DataProvider>

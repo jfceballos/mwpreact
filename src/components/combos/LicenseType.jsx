@@ -15,8 +15,8 @@ const LicenseType = ({initialValue, onChange}) => {
 
     const getCatalogInfo = async () => {
         try {
-            const params = {"catalogName": "licenseType"};
-            const response  = await axios.post('catalog/getCatalogInfo', "licenseType", 
+            const params = {'catalogName': "licenseType", 'dependencyValue' : ''} ;
+            const response  = await axios.post('catalog/getCatalogInfo', params, 
                             {
                                 headers: {
                                     'Authorization' : `Bearer ${token}`,
