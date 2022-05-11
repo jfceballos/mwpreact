@@ -5,12 +5,12 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import {AuthProvider} from './context/AuthProvider'
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { createStore } from 'redux';
-import userReducer from './reducers/user';
+import { createStore, applyMiddleware } from 'redux';
 import allReducers from './reducers';
 
 import { persistStore, persistReducer } from "redux-persist"
 import storage from "redux-persist/lib/storage"
+import thunk from 'redux-thunk';
 
 
   const persistConfig = {
@@ -19,9 +19,10 @@ import storage from "redux-persist/lib/storage"
   }
 const pReducer = persistReducer(persistConfig, allReducers)
 
-const store = createStore(pReducer, window.__REDUX_DEVTOOLS_EXTENSION__ &&
-  window.__REDUX_DEVTOOLS_EXTENSION__());
-
+const store = createStore(pReducer, applyMiddleware(thunk))
+/* window.__REDUX_DEVTOOLS_EXTENSION__ &&
+window.__REDUX_DEVTOOLS_EXTENSION__());
+ */
 const persistor = persistStore(store);
  
 ReactDOM.render(

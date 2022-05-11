@@ -13,6 +13,7 @@ import Test from './pages/Test';
 import Settings from './pages/Settings';
 import ReactHookForm from './pages/ReactHookForm';
 import Redirect from './pages/Redirect';
+import AssetTable from './components/CST/AssetTable';
  
 
 function App() {
@@ -25,10 +26,10 @@ function App() {
          {/*  <ReactHookForm /> */}
            <Routes>      
               <Route path='/' element={<Settings />}>
-                  <Route path='/test' element = {<Test/>} />
+                  <Route index path='/asset' element = {<AssetTable/>} />
                   <Route path='/test2' element ={<ReactHookForm />} />
               </Route>
-           
+            <Route path="/test" element = { <Test/>} />
             <Route path="/login" element = {<Login/>} />
             <Route path="/clientes" element = {<CST000401/>} />
             <Route path="/createuser" element = {<CreateUser/>} />

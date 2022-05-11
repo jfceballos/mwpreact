@@ -1,16 +1,55 @@
 
 .cst{
+      
+    * { 
+        font-family: 'Arial Nova Cond';
+        font-size: 14px;
+    }
+
+   
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        border-bottom: 0px;
+        border-right: 0px;
+        
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #76afc633;
+    }
+
+    .btnsection {
+        text-align: right;
+        border-bottom: 1px solid gray;
+    }
+
+    button.asset {
+        position: relative;
+        border: none;
+        color: #0E0073;
+        background-color: white;
+        margin-left: 10px;
+    }
         
     input {
         margin: 10px;
         width: 80%;
     }   
 
+    
+
+    .sectionAsset {
+        height: 400px;
+        overflow-y: scroll;
+    }
+
     table {
-        table-layout: fixed;
+      /*   table-layout: fixed;  */
         word-wrap:break-word;
         border-collapse: separate;
-
+       
    
     }
 
@@ -27,9 +66,10 @@
        
     }
     td{
-        font-size: 12px;
+       
         cursor: pointer;
     }
+
 
 }
 
@@ -93,3 +133,34 @@
         background-color: white;
     }
 }
+
+.squaredOne {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    background: #fcfff4; 
+    border: 1px solid black;
+    label {
+      cursor: pointer;
+      &:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        background: #003c74;     
+        opacity: 0;
+      }
+      &:hover::after {
+        opacity: 0.3;
+      }
+    }
+    input[type=checkbox] {
+      visibility: hidden;    
+      &:checked + label:after {
+        opacity: 1;
+      }   
+    } 
+  }
+  /* end .squaredOne */

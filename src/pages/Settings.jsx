@@ -46,7 +46,7 @@ const Settings = () => {
                     </li>
                     <li className='active nav-item'>
                         {/* <a href='#'>Colors & Themes</a> */}
-                        <Link to='/test'  className='nav-link'>Colors & Themes</Link>
+                        <Link to='/asset'  className='nav-link'>Colors & Themes</Link>
                     </li>
                     <li className='nav-item'>
                         {/* <a href='#' className='nav-link'>Portfolio Management</a> */}
@@ -65,10 +65,10 @@ const Settings = () => {
          <Outlet/>
          <div>
          
-         <Routes>      
+         {/* <Routes>      
             <Route index element = {<Test/>} />
            
-        </Routes>
+        </Routes> */}
          </div>
 
     </div>
